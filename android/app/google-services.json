@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "191792960483",
-    "project_id": "fir-tutorial-36108",
-    "storage_bucket": "fir-tutorial-36108.appspot.com"
+    "project_number": "295313202243",
+    "project_id": "fir-tutorial-7cd0a",
+    "storage_bucket": "fir-tutorial-7cd0a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:191792960483:android:22b03c58fde8599bb946d6",
+        "mobilesdk_app_id": "1:295313202243:android:e8b080c5dfca1d617148f6",
         "android_client_info": {
           "package_name": "com.example.frontend"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDoeVSl-kBIld8tB1AF8gUPTQxJhTHKo_U"
+          "current_key": "AIzaSyAIJOkjsmhaocIMw8oUunoDJvJ7-TWREYA"
         }
       ],
       "services": {
