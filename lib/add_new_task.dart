@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/utils.dart';
 import 'package:intl/intl.dart';
 
 class AddNewTask extends StatefulWidget {
@@ -28,11 +29,13 @@ class _AddNewTaskState extends State<AddNewTask> {
 
   Future<void> uploadTaskToDb() async {
     try {
-      FirebaseFirestore.instance.collection("tasks").add({
+      final data = await FirebaseFirestore.instance.collection("tasks").add({
         "title": titleController.text.trim(),
         "description": descriptionController.text.trim(),
         "date": FieldValue.serverTimestamp(),
+        "color": rgbToHex(_selectedColor),
       });
+      print(data.id);
     } catch (e) {
       print(e);
     }
@@ -135,7 +138,9 @@ class _AddNewTaskState extends State<AddNewTask> {
               ),
               const SizedBox(height: 10),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await uploadTaskToDb();
+                },
                 child: const Text(
                   'SUBMIT',
                   style: TextStyle(
