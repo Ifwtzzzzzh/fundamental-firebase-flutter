@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/add_new_task.dart';
@@ -39,8 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             const DateSelector(),
-            FutureBuilder(
-              future: FirebaseFirestore.instance.collection("tasks").get(),
+            StreamBuilder(
+              stream: FirebaseFirestore.instance
+                  .collection("tasks")
+                  .where('creator',
+                      isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+                  .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
