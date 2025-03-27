@@ -1,4 +1,4 @@
-# Fundamental Firebase
+# 🔥 Fundamental Firebase
 
 Firebase is a powerful backend-as-a-service (BaaS) platform developed by Google, designed to help developers build, improve, and grow their applications. When combined with Flutter, Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase, Firebase becomes an indispensable tool for creating modern, scalable, and feature-rich apps.
 
